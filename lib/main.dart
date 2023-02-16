@@ -116,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 import 'package:first_flutter_proj/pages/home_page.dart';
 import 'package:first_flutter_proj/pages/login_page.dart';
+import 'package:first_flutter_proj/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -136,11 +137,11 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => LoginPage(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
